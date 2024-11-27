@@ -1,0 +1,14 @@
+{
+  "builds": [
+    {
+      "src": "camelo_topografia/wsgi.py",
+      "use": "@vercel/python"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "camelo_topografia/wsgi.py"
+    }
+  ]
+}

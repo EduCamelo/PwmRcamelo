@@ -1,0 +1,261 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>R Camelo Topografia</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+    <link rel="icon" href="{% static 'logo/logo-RCamelo-removebg.png' %}" type="image/jpeg">
+
+    <style>
+        /* Aumenta o tamanho do spinner */
+#loading-spinner .spinner-border {
+    width: 3rem;
+    height: 3rem;
+    border-width: 0.3rem; /* Ajuste a espessura da borda se necessário */
+}
+
+/* Centraliza o spinner */
+#loading-spinner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+/* Personaliza a aparência das mensagens de feedback */
+#feedback-message {
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* Adiciona um fundo de sucesso */
+.alert-success {
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+    color: #155724;
+}
+
+/* Adiciona um fundo de erro */
+.alert-danger {
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+    color: #721c24;
+}
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="{% static 'logo/logo-RCamelo-removebg.png' %}" alt="Logo Rcamelo">
+        </div>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#servicos-section">Serviços</a>
+            <a href="#sobre">Sobre</a>
+            <a href="#portfolio">Portfólio</a>
+            <a href="#contatos">Contatos</a>
+        </nav>
+    </header>
+
+    <section class="banner" style="background: url({% static 'elementos/trabalho.jpg' %}) no-repeat center top/cover;position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; 
+    align-items: center; 
+    text-align: center;
+    height: 120vh; 
+    width: 100%;
+    background-attachment: fixed; 
+    color: white;
+    padding-top: calc(20vh + 80px); 
+    padding-left: 20px;
+    padding-right: 20px;
+    box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.5); ">
+        <h2>Sua Parceira Ideal para Projetos de Engenharia e Construção</h2>
+        <a href="#servicos-section" class="scroll-down">
+            <img src="{% static 'elementos/arrow-down.png' %}" alt="Seta para baixo">
+        </a>
+    </section>
+
+    <section id="servicos-section" class="servicos-section">
+        <h2>Nossos Serviços</h2>
+        <div class="servicos-cards">
+            <div class="servico-card">
+                <img src="{% static 'elementos/imagem-levantamento-topografico.jpeg' %}" alt="Levantamento Topográfico">
+                <h3>Levantamento Topográfico</h3>
+                <p>Levantamento topográfico detalhado para precisão e planejamento.</p>
+            </div>
+            <div class="servico-card">
+                <img src="{% static 'elementos/Georreferenciamento.jpeg' %}" alt="Georeferenciamento GPS">
+                <h3>Georeferenciamento GPS</h3>
+                <p>Georeferenciamento GPS com alta precisão para mapeamento e validação.</p>
+            </div>
+            <div class="servico-card">
+                <img src="{% static 'elementos/curvanivel.jpg' %}" alt="Curva Nível">
+                <h3>Curvas de Nível</h3>
+                <p>Elaboração de curvas de nível para análise e projetos de terrenos.</p>
+            </div>
+            <div class="servico-card">
+                <img src="{% static 'elementos/levantamentoArquitetonico.jpg' %}" alt="Levantamento Arquitetônico">
+                <h3>Levantamento Arquitetônico</h3>
+                <p>Levantamento arquitetônico para projetos e reformas precisas.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="sobre-section" id="sobre">
+        <div class="sobre-container">
+            <div class="sobre-text">
+                <h2>Sobre Nós</h2>
+                <p style="font-style: italic;">
+                    Com mais de 30 anos de experiência, a R Camelo Topografia se consolidou como uma referência no mercado de serviços topográficos, oferecendo soluções precisas e de alta qualidade para projetos de engenharia, construção, urbanismo e agrimensura. Durante mais de três décadas, a empresa tem se destacado pela excelência técnica, inovação constante e compromisso com a satisfação dos seus clientes.
+                </p>
+            </div>
+            <div class="sobre-image">
+                <img src="{% static 'elementos/sobre.jpg' %}" alt="Sobre a R Camelo Topografia">
+            </div>
+        </div>
+    </section>
+
+    <section class="portfolio" id="portfolio">
+        <h2>Portfólio</h2>
+        <div class="portfolio-container">
+            <div class="portfolio-item">
+                <img src="{% static 'empresas/Fiat-Logo.png' %}" alt="Fiat">
+            </div>
+            <div class="portfolio-item">
+                <img src="{% static 'empresas/jbs-foods-logo.png' %}" alt="JBS Foods">
+            </div>
+            <div class="portfolio-item">
+                <img src="{% static 'empresas/mcdonalds.png' %}" alt="McDonald's">
+            </div>
+            <div class="portfolio-item">
+                <img src="{% static 'empresas/Petrobras-Logo.png' %}" alt="Petrobras">
+            </div>
+            <div class="portfolio-item">
+                <img src="{% static 'empresas/QUEIROZ-GALVAO.png' %}" alt="Queiroz Galvão">
+            </div>
+            <div class="portfolio-item">
+                <img src="{% static 'empresas/Walmart_logo.svg.png' %}" alt="Walmart">
+            </div>
+        </div>
+    </section>
+
+    <div class="contact" id="contatos">
+        <div class="contact-form">
+            <h1>Contate-nos</h1>
+            <form action ="/send-email/"method = "POST">
+                {% csrf_token %}
+                <input type="text" name="name" placeholder="Nome" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <textarea name="message" placeholder="Descrição" required></textarea>
+                <button type="submit">Enviar</button>
+            </form>
+            <div id="loading-spinner" class="mt-3" style="visibility: hidden;">
+                <div class="spinner-border text-primary" role="status">
+                    <span class="visually-hidden">Carregando...</span>
+                </div>
+            </div>
+            
+        
+            <div id="feedback-message" class="mt-3"></div>
+        </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="{% static 'logo/logo-RCamelo-removebg.png' %}" alt="Logo Camelo Empreendimentos">
+                </div>
+                <div class="footer-info-wrapper">
+                    <div class="footer-info">
+                        <p>
+                            Luiz Carlos Barreto de Siqueira<br>
+                            Engº Civil<br>
+                            CREA 21459 D/PE
+                        </p>
+                        <p>
+                            Endereço:<br>
+                            Rua Armindo Moura, 478C - Varadouro<br>
+                            Olinda - PE
+                        </p>
+                        <p>
+                            Fones:<br>
+                            (81) 99313-9165<br>
+                            (81) 99257-1510
+                        </p>
+                        <p>
+                            Email: <a href="mailto:luizcalostopografia@yahoo.com.br">luizcalostopografia@yahoo.com.br</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+    const form = document.querySelector("form");
+    const messageDiv = document.getElementById("feedback-message"); // Pega a div do feedback
+    const loadingSpinner = document.getElementById("loading-spinner"); // Pega o spinner de carregamento
+
+    form.addEventListener("submit", function(event) {
+        event.preventDefault();  // Previne o envio normal do formulário
+
+        // Mostra o spinner de carregamento
+        loadingSpinner.style.visibility = "visible"
+
+        // Cria o objeto FormData com os dados do formulário
+        const formData = new FormData(form);
+
+        // Envia os dados via AJAX
+        fetch("{% url 'send_email' %}", {
+            method: "POST",
+            body: formData,
+            headers: {
+                "X-CSRFToken": document.querySelector('[name="csrfmiddlewaretoken"]').value,  // Adiciona o token CSRF
+            }
+        })
+        .then(response => response.json())  // Recebe a resposta JSON
+        .then(data => {
+            // Oculta o spinner de carregamento
+            loadingSpinner.style.visibility = "hidden";
+
+            // Exibe o feedback com base no status
+            if (data.status === "success") {
+                messageDiv.textContent = data.message;
+                messageDiv.classList.add("alert", "alert-success");  // Classe de sucesso
+                messageDiv.classList.remove("alert-danger");  // Remove a classe de erro, caso esteja presente
+            } else {
+                messageDiv.textContent = data.message;
+                messageDiv.classList.add("alert", "alert-danger");  // Classe de erro
+                messageDiv.classList.remove("alert-success");  // Remove a classe de sucesso, caso esteja presente
+            }
+        })
+        .catch(error => {
+            // Oculta o spinner de carregamento em caso de erro
+            loadingSpinner.style.visibility = "hidden";
+
+            messageDiv.textContent = "Ocorreu um erro ao enviar o email.";
+            messageDiv.classList.add("alert", "alert-danger");  // Classe de erro
+            messageDiv.classList.remove("alert-success");  // Remove a classe de sucesso
+        });
+    });
+});
+
+
+        </script>
+        
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}" defer></script>
+</body>
+</html>
+    
